@@ -1,0 +1,37 @@
+.AddBtn {
+    background-color: #26B7CD;
+    color: #FFF;
+    border-style: none;
+    border-radius: 8px;
+    width: 60%;
+    padding: 6px 0;
+    margin-top: 5px;
+}
+
+.BtnEdit {
+    color: #26B7CD;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 5px 10px;
+    border: 1px solid #26B7CD;
+    margin: 2px;
+}
+
+.BtnEdit:hover {
+    transition: 0.2s;
+    background-color: #26B7CD;
+    color: #fff;
+}
+
+.btnDelete {
+    background-color: #F35050;
+    color: #FFF;
+    border-radius: 7px;
+    padding: 5px 10px;
+    border: none;
+    margin: 2px;
+}
+
+.btnDelete:hover {
+    background-color: #ea3b3b;
+}

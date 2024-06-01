@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    font-family: rubik;
+}
+
+.formParent {
+    background-color: #F9FAFB;
+    box-shadow: 0px 0px 12px 0px #00000026;
+    border-radius: 16px;
+    padding: 32px;
+    width: 400px;
+
+}
+
+.SubBtn {
+    background-color: #26B7CD;
+    padding: 14px, 16px, 14px, 16px;
+    border-radius: 8px;
+    height: 48px;
+    color: #FFF;
+    border-style: none;
+
+}
+
+.lines {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+.cstOr::before {
+    content: "";
+    position: absolute;
+    width: 143.5px;
+    border: 2px;
+    background-color: #E4E7EC;
+    height: 1px;
+    top: 50%;
+    left: 100%;
+}
+
+.cstOr::after {
+    content: "";
+    position: absolute;
+    width: 143.5px;
+    border: 2px;
+    background-color: #E4E7EC;
+    height: 1px;
+    top: 50%;
+    right: 100%;
+}
+
+.cstOr {
+    position: relative;
+    color: #000;
+
+}
+
+.footer p a {
+    color: #26B7CD;
+}
+
+.footer p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    font-family: Rubik;
+}
+
+.alertMsg {
+    color: #F35050;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    /* padding-top: 10px; */
+}
+
+.alertMsgE {
+    background-color: #F6838326;
+    padding: 10px, 24px, 10px, 24px;
+    border-radius: 8px;
+}
