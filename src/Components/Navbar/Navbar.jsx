@@ -2,8 +2,15 @@ import React from "react";
 import "./Navbar.css";
 import spaceImg from "../../assets/photos/image.png";
 import { useUserProfile } from "../../Context/UserProfile/User";
+import { useNavigate } from "react-router-dom";
 export default function Navbar() {
   const { name } = useUserProfile();
+
+let navigate= useNavigate()
+  function logOut(){
+    // localStorage.removeItem('formData')
+    navigate('./login')
+  }
 
   return (
     <>
@@ -45,8 +52,8 @@ export default function Navbar() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Logout
+                    <a onClick={logOut} className="dropdown-item" >
+                      Logout 
                     </a>
                   </li>
                 </ul>
