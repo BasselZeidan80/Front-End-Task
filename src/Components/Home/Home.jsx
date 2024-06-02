@@ -3,6 +3,7 @@ import styles from "./Home.module.css";
 import "./Home.css";
 import Navbar from "../Navbar/Navbar";
 import BodyData from "../BodyData/BodyData";
+import Swal from "sweetalert2";
 
 function getDataFromLs() {
   const data = localStorage.getItem("Products");
@@ -26,8 +27,10 @@ export default function Home() {
   const handleAddPrd = (e) => {
     e.preventDefault();
 
-    // Check if any of the fields are empty
+    //  To Check if any of the fields are empty
     if (!name || !Price || !Quantity) {
+      Swal.fire("All inputs Are Required!");
+
       return;
     }
 
