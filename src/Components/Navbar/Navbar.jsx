@@ -6,10 +6,10 @@ import { useNavigate } from "react-router-dom";
 export default function Navbar() {
   const { name } = useUserProfile();
 
-let navigate= useNavigate()
-  function logOut(){
+  let navigate = useNavigate();
+  function logOut() {
     // localStorage.removeItem('formData')
-    navigate('./login')
+    navigate("/login");
   }
 
   return (
@@ -52,8 +52,8 @@ let navigate= useNavigate()
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a onClick={logOut} className="dropdown-item" >
-                      Logout 
+                    <a onClick={logOut} className="dropdown-item">
+                      Logout
                     </a>
                   </li>
                 </ul>
