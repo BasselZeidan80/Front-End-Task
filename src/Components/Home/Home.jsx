@@ -22,6 +22,7 @@ export default function Home() {
   const [Quantity, setQuantity] = useState("");
   const [Price, setPrice] = useState("");
   const [editIndex, setEditIndex] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
 
   // form submit event
   const handleAddPrd = (e) => {
@@ -78,6 +79,7 @@ export default function Home() {
     setPrice(Product.Price);
     setQuantity(Product.Quantity);
     setEditIndex(index);
+    setIsEditing(true);
   }
 
   //Delete product from local storage
@@ -97,6 +99,14 @@ export default function Home() {
 
         setProducts(UpdatedPrd);
         console.log("UpdatedPrd=======", UpdatedPrd);
+
+        // Reset the form fields and button status
+        setName("");
+        setPrice("");
+        setQuantity("");
+        setEditIndex(null);
+        setIsEditing(false);
+
         Swal.fire({
           title: "Deleted!",
           text: "Your file has been deleted.",
@@ -184,7 +194,7 @@ export default function Home() {
           </table>
           {Products.length < 1 && (
             <p className="text-center mt-5 alert alert-warning">
-              No products are added yet{" "}
+              No products are added yet
             </p>
           )}
         </div>
