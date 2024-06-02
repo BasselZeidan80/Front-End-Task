@@ -8,6 +8,14 @@
     margin-top: 5px;
 }
 
+.DownloadBtn {
+    background-color: #26B7CD;
+    color: #FFF;
+    border-style: none;
+    border-radius: 8px;
+    padding: 10px 10px;
+}
+
 .BtnEdit {
     color: #26B7CD;
     background-color: #fff;

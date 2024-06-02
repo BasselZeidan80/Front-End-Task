@@ -226,7 +226,7 @@ export default function Home() {
         </div>
 
         <div className="d-flex justify-content-center mt-4">
-          <button className="btn btn-primary me-2" onClick={downloadPdf}>
+          <button className="DownloadBtn  " onClick={downloadPdf}>
             Download PDF
           </button>
         </div>
