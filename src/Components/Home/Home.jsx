@@ -4,6 +4,7 @@ import "./Home.css";
 import Navbar from "../Navbar/Navbar";
 import BodyData from "../BodyData/BodyData";
 import Swal from "sweetalert2";
+import jsPDF from "jspdf";
 
 function getDataFromLs() {
   const data = localStorage.getItem("Products");
@@ -121,6 +122,26 @@ export default function Home() {
     });
   }
 
+  // Function to download products as PDF
+  const downloadPdf = () => {
+    const doc = new jsPDF();
+    doc.text("Products List", 10, 10);
+    let y = 20;
+
+    Products.forEach((product, index) => {
+      doc.text(
+        `${index + 1}. ${product.name} - Price: ${product.Price} - Quantity: ${
+          product.Quantity
+        }`,
+        10,
+        y
+      );
+      y += 10;
+    });
+
+    doc.save("products.pdf");
+  };
+
   return (
     <>
       <Navbar />
@@ -202,6 +223,12 @@ export default function Home() {
               No products are added yet
             </p>
           )}
+        </div>
+
+        <div className="d-flex justify-content-center mt-4">
+          <button className="btn btn-primary me-2" onClick={downloadPdf}>
+            Download PDF
+          </button>
         </div>
       </div>
     </>
