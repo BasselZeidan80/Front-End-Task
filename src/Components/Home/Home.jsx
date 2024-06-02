@@ -47,6 +47,14 @@ export default function Home() {
       );
       setProducts(updatedProducts);
       setEditIndex(null);
+
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "Your product has been updated",
+        showConfirmButton: false,
+        timer: 1000,
+      });
     } else {
       // Add new product
       setProducts([...Products, product]);
