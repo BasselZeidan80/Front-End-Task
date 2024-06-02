@@ -1,12 +1,12 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const UserProfileContext = createContext();
 
 export function UserProfileProvider({ children }) {
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   useEffect(() => {
-    const formData = localStorage.getItem('formData');
+    const formData = localStorage.getItem("formData");
     if (formData) {
       const parsedData = JSON.parse(formData);
       setName(parsedData.name);
@@ -14,7 +14,7 @@ export function UserProfileProvider({ children }) {
   }, []);
 
   return (
-    <UserProfileContext.Provider value={{ name }}>
+    <UserProfileContext.Provider value={{ name, setName }}>
       {children}
     </UserProfileContext.Provider>
   );

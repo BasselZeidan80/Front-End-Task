@@ -11,7 +11,7 @@ export default function Register() {
       .required("Name is Required"),
     email: Yup.string().email("Invalid Format.").required("Email is Required"),
     Password: Yup.string()
-      .matches(/^(?=.*\S).{9,}$/, "Must be 8 or more characters.")
+      .matches(/^(?=.*\S).{8,}$/, "Must be 8 or more characters.")
       .required("Password Required"),
   });
 
