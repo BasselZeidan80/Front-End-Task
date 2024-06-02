@@ -35,6 +35,11 @@ export default function Home() {
       return;
     }
 
+    // Validate that price and quantity are not negative
+    if (Price < 0 || Quantity < 0) {
+      Swal.fire("Price and Quantity cannot be negative!");
+      return;
+    }
     //create obj
     let product = {
       name: name,
