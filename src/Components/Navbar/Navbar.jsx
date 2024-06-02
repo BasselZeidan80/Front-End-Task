@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Navbar.css";
 import spaceImg from "../../assets/photos/image.png";
 import { useUserProfile } from "../../Context/UserProfile/User";
 import { useNavigate } from "react-router-dom";
 export default function Navbar() {
-  const { name } = useUserProfile();
+  const { name, setName } = useUserProfile();
+
+  useEffect(() => {
+    const formData = localStorage.getItem("formData");
+    if (formData) {
+      const parsedData = JSON.parse(formData);
+      setName(parsedData.name);
+    }
+  }, []);
 
   let navigate = useNavigate();
   function logOut() {
