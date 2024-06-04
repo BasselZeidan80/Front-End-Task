@@ -92,7 +92,7 @@ export default function Register() {
             </div>
             <button className="w-100 SubBtn ">Submit</button>
             <div className=" lines mt-4  ">
-              <div className="cstOr px-2">OR</div>
+              <div className="cstOr text-muted px-2">OR</div>
             </div>
             <div className="footer mt-3 d-flex align-items-center justify-content-center">
               <p>

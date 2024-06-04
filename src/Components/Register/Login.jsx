@@ -9,7 +9,7 @@ export default function Login() {
   const myValidationSchema = Yup.object({
     email: Yup.string().email("Invalid Format.").required("Email is Required"),
     Password: Yup.string()
-      .matches(/^(?=.*\S).{9,}$/, "Must be 8 or more characters.")
+      .matches(/^(?=.*\S).{8,}$/, "Must be 8 or more characters.")
       .required("Password Required"),
   });
 
@@ -20,7 +20,7 @@ export default function Login() {
     if (
       storedData &&
       storedData.email === values.email &&
-      storedData.password === values.password
+      storedData.Password === values.Password
     ) {
       console.log("Login successful");
       navigate("/home");
@@ -29,6 +29,7 @@ export default function Login() {
 
       console.log("Invalid email or password");
     }
+    return;
   }
   const LoginForm = useFormik({
     initialValues: {
@@ -90,7 +91,7 @@ export default function Login() {
             </div>
             <button className="w-100 SubBtn ">Submit</button>
             <div className=" lines mt-4  ">
-              <div className="cstOr px-2">OR</div>
+              <div className="cstOr text-muted px-2">OR</div>
             </div>
             <div className="footer mt-3 d-flex align-items-center justify-content-center">
               <p>
