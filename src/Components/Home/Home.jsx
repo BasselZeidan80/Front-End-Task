@@ -41,6 +41,10 @@ export default function Home() {
       Swal.fire("Price and Quantity cannot be negative!");
       return;
     }
+    if (name.length > 20) {
+      Swal.fire("length of name cannot be more than 20 characters");
+      return;
+    }
     //create obj
     let product = {
       name: name,
